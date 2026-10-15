@@ -1,58 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Simo Publish Hub</title>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; line-height: 1.6; }
-  h1 { font-size: 1.8em; } h2 { margin-top: 1.8em; font-size: 1.25em; }
-  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #e5e5e5; color: #777; font-size: 0.9em; }
-  a { color: #0a66c2; }
+  body { font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #1a1a1a; }
+  h1 { font-size: 28px; }
+  h2 { font-size: 20px; margin-top: 32px; }
+  code { background: #f2f2f2; padding: 2px 6px; border-radius: 4px; }
+  footer { margin-top: 40px; color: #555; font-size: 14px; }
 </style>
 </head>
 <body>
-  <h1>Privacy Policy — Simo Publish Hub</h1>
-  <p><em>Last updated: October 12, 2026</em></p>
+<h1>Privacy Policy — Simo Publish Hub</h1>
+<p>Effective date: October 15, 2026</p>
 
-  <h2>1. What this tool is</h2>
-  <p>Simo Publish Hub ("the Tool") is a creator productivity tool that lets a creator upload their own original short-form videos to their own TikTok account and draft or schedule posts, using TikTok's official Login Kit and Content Posting API.</p>
+<p>Simo Publish Hub ("the tool") uploads original videos to our own YouTube
+channels using the YouTube Data API v3. This policy explains what data the
+tool accesses, how it is used, and what it never does.</p>
 
-  <h2>2. Data we access</h2>
-  <p>When you connect your TikTok account, the Tool accesses only what is needed to publish your videos, under the TikTok permissions you approve:</p>
-  <ul>
-    <li><strong>Basic profile information</strong> (<code>user.info.basic</code>) — to identify which TikTok account you connected (open ID, display name).</li>
-    <li><strong>Video upload</strong> (<code>video.upload</code>) — to upload the video files you choose to publish.</li>
-    <li><strong>Video publish</strong> (<code>video.publish</code>) — to publish or schedule those videos on your own account.</li>
-  </ul>
-  <p>The Tool does not read your messages, followers, likes, comments, or any other TikTok data.</p>
+<h2>What the tool does</h2>
+<p>The tool publishes videos we created to our own YouTube channels:</p>
+<ul>
+  <li>One Clear Choice Stoicism (<code>@oneclearchoice</code>)</li>
+  <li>Stoic Stop (<code>@stoicstopquotes</code>)</li>
+</ul>
+<p>Each upload is an original video produced by us. The tool does not upload
+anyone else's content.</p>
 
-  <h2>3. How your data is used</h2>
-  <ul>
-    <li>Your TikTok access tokens are stored securely on your own machine and used only to upload and publish videos you explicitly choose.</li>
-    <li>Your videos and captions are sent to TikTok only when you publish or schedule a post.</li>
-    <li>We do not sell, rent, or share your data with third parties.</li>
-    <li>We do not use your data for advertising or analytics.</li>
-  </ul>
+<h2>YouTube API — Data Use</h2>
+<p>The tool uses the YouTube Data API v3 with a single OAuth scope:</p>
+<ul>
+  <li><code>https://www.googleapis.com/auth/youtube.upload</code> (upload-only)</li>
+</ul>
+<p>API calls made by the tool:</p>
+<ul>
+  <li><code>videos.insert</code> — resumable upload, parts
+    <code>snippet</code> and <code>status</code>. Sends only the video file
+    and the metadata we provide: title, description, tags, category, and
+    privacy status.</li>
+  <li><code>thumbnails.set</code> — sets the custom thumbnail image we
+    provide for the uploaded video.</li>
+</ul>
+<p>That is all. The tool makes no other YouTube API calls.</p>
 
-  <h2>4. Data retention</h2>
-  <p>Access tokens are kept on your device until you disconnect the Tool or revoke access. Videos you upload are processed by TikTok under <a href="https://www.tiktok.com/legal/page/row/privacy-policy/en">TikTok's Privacy Policy</a>.</p>
+<h2>What data we do NOT access</h2>
+<ul>
+  <li>No viewer data (no watch history, no viewing activity).</li>
+  <li>No comments — the tool never reads, posts, or manages comments.</li>
+  <li>No analytics, reports, or channel statistics.</li>
+  <li>No subscriber lists or subscriber data.</li>
+  <li>No data about other channels or other users.</li>
+</ul>
 
-  <h2>5. Revoking access / deleting data</h2>
-  <p>You can revoke the Tool's access at any time from your TikTok settings (Settings → Security → Manage app permissions). To request deletion of any data the Tool holds about you, email <strong>bothanout101@gmail.com</strong> and it will be deleted within 30 days.</p>
+<h2>How authorization works</h2>
+<p>Uploads are authorized with OAuth tokens for our own Google account. The
+tokens are stored on our own server and authorize only uploads to our own
+channels. Tokens are never shared, sold, or given to any third party. If you
+are the account owner and want access revoked, remove the app's access in
+your Google account permissions — uploads stop immediately.</p>
 
-  <h2>6. Children's privacy</h2>
-  <p>The Tool is not directed at children under 13, and we do not knowingly collect data from children.</p>
+<h2>Data sharing and retention</h2>
+<p>We do not sell, rent, or share any data with third parties. Uploaded
+videos and their metadata live on YouTube under our own channels, subject to
+YouTube's own policies. We keep no copy of viewer or user data because we
+never collect any.</p>
 
-  <h2>7. Changes to this policy</h2>
-  <p>If this policy changes, the updated version will be posted here with a new "Last updated" date.</p>
+<h2>Changes to this policy</h2>
+<p>If the tool's data use changes, this page will be updated and the
+effective date above will change.</p>
 
-  <h2>8. Contact</h2>
-  <p>Questions about this policy: <strong>bothanout101@gmail.com</strong></p>
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:bothanout101@gmail.com">bothanout101@gmail.com</a></p>
 
-  <footer>
-    <p><a href="index.html">Home</a> · <a href="terms-of-service.html">Terms of Service</a></p>
-    <p>© 2026 Simo Publish Hub. Not affiliated with TikTok.</p>
-  </footer>
+<footer>Simo Publish Hub — Privacy Policy</footer>
 </body>
 </html>
