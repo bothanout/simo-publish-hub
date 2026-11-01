@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Save sandbox token</title>
+</head>
+<body>
+<h1>Save sandbox token</h1>
+<p>Click in the box below, paste the token, then click Download. The file saves as sandbox-token.txt.</p>
+<textarea id="tokenBox" rows="6" cols="80" placeholder="Paste the token here"></textarea>
+<br>
+<button id="downloadBtn" type="button">Download sandbox-token.txt</button>
+<script>
+document.getElementById('downloadBtn').addEventListener('click', function () {
+  var text = document.getElementById('tokenBox').value;
+  var blob = new Blob([text], { type: 'text/plain' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'sandbox-token.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+});
+</script>
+</body>
+</html>
